@@ -1,0 +1,69 @@
+﻿@using PagedList.Mvc
+@model WebApplication.ViewModels.Companies.CompanyListViewModel
+
+<div class="table-responsive">
+    <table class="table dark table-bordered table-striped width-100">
+        <colgroup>
+            <col style="min-width: 1em; width: 1em;" />
+            <col style="width: auto;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.PagedListItems.Any())
+            {
+                <tr>
+                    <td colspan="2">No Companies found.</td>
+                </tr>
+            }
+
+            @foreach (var item in Model.PagedListItems)
+            {
+                <tr>
+                    <td>
+                        <a href="@Url.Action("Edit", new {id = item.Id})" title="View Bid" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-file"></span> View
+                        </a>
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        @Html.PagedListPager(Model.PagedListItems,
+            page => Url.Action("Index", new { page, size = Model.PageSize, NameSearch = Model.NameSearch, pageChange = true }),
+            new PagedListRenderOptions { MaximumPageNumbersToDisplay = 5 })
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12 text-right">
+        <div class="pagination-container">
+            <div class="btn-group dropup pull-right">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Display: @Model.PagedListItems.PageSize <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#" onclick="return handlePageSizeChange(10);">10</a></li>
+                    <li><a href="#" onclick="return handlePageSizeChange(25);">25</a></li>
+                    <li><a href="#" onclick="return handlePageSizeChange(50);">50</a></li>
+                    <li><a href="#" onclick="return handlePageSizeChange(100);">100</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+Items @Model.PagedListItems.FirstItemOnPage to @Model.PagedListItems.LastItemOnPage of @Model.PagedListItems.TotalItemCount
+
+<script type="text/javascript">
+    function handlePageSizeChange(pageSize) {
+        filterPage('@Url.Action("Filter")', pageSize);
+        return false;
+    }
+</script>

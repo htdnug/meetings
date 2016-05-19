@@ -1,0 +1,16 @@
+﻿@model WebApplication.ViewModels.Companies.CompanyEditViewModel
+
+@{
+    ViewBag.Title = "Add Company";
+}
+
+<div class="page-header">
+    <h2>@ViewBag.Title</h2>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        @Html.Partial("_Editable", Model)
+    </div>
+}

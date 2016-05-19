@@ -1,0 +1,58 @@
+﻿@model WebApplication.ViewModels.Companies.CompanyListViewModel
+
+@{
+    ViewBag.Title = "Companies";
+}
+
+<div class="page-header">
+    <h2>@ViewBag.Title</h2>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+        <a href="@Url.Action("Create")" class="btn btn-default">
+            <span class="glyphicon glyphicon-plus"></span> Add New
+        </a>
+    </div>
+</div>
+
+<div class="panel panel-default" id="list-filters">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <a data-toggle="collapse" data-parent="#filters" href="#filter-body" aria-expanded="true" aria-controls="collapseOne">
+                <span id="filter-indicator" class="glyphicon glyphicon-chevron-up"></span> Filters
+            </a>
+        </h3>
+    </div>
+    <div id="filter-body" class="panel-body panel-collapse collapse in">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                @Html.LabelFor(m => m.NameSearch, new { @class = "control-label col-md-2 col-sm-3 col-xs-12" })
+                <div class="col-md-2 col-sm-9 col-xs-12">
+                    @Html.EditorFor(m => m.NameSearch, new { htmlAttributes = new { id = "name-search-input", @class = "form-control", placeholder = "Enter name search" } })
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <button id="filter-button" type="button" class="btn btn-primary" onclick="handleFilterButtonClick('@Url.Action("Filter")', @Model.PageSize);">
+                        <span class="glyphicon glyphicon-filter"></span> Filter
+                    </button>
+                    <button id="clear-filter-button" type="button" class="btn btn-default" onclick="handleClearButtonClick('@Url.Action("Clear")', @Model.PageSize);">
+                        <span class="glyphicon glyphicon-ban-circle"></span> Clear
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="company-list">
+    @Html.Partial("_List", Model)
+</div>
+
+@section scripts
+{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/views/companies/list.js")"></script>
+}
+
+
+
