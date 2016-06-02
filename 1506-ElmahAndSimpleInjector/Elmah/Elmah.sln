@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ElmahDatabase", "ElmahDatabase\ElmahDatabase.sqlproj", "{AB9BE6DB-FB07-4D9C-B86D-32921B326BFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElmahWebApplication", "ElmahWebApplication\ElmahWebApplication.csproj", "{119ED562-69A1-4349-8651-8B8B9E328A6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB9BE6DB-FB07-4D9C-B86D-32921B326BFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB9BE6DB-FB07-4D9C-B86D-32921B326BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB9BE6DB-FB07-4D9C-B86D-32921B326BFA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AB9BE6DB-FB07-4D9C-B86D-32921B326BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB9BE6DB-FB07-4D9C-B86D-32921B326BFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB9BE6DB-FB07-4D9C-B86D-32921B326BFA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{119ED562-69A1-4349-8651-8B8B9E328A6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{119ED562-69A1-4349-8651-8B8B9E328A6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{119ED562-69A1-4349-8651-8B8B9E328A6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{119ED562-69A1-4349-8651-8B8B9E328A6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
