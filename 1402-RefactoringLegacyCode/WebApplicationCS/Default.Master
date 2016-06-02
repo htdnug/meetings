@@ -1,0 +1,24 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="WebApplicationCS.Default" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Test Application</title>
+    <link href="~/Styles/styles.css?v=1" rel="stylesheet" type="text/css" media="all" />
+    <asp:ContentPlaceHolder ID="HeaderContentPlaceHolder" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrapper">
+        <div id="header">
+            <h1>Test Application</h1>
+        </div>
+        <div id="content-wrap">
+            <div id="content">
+                <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />           
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
