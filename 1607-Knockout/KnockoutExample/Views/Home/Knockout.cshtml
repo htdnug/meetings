@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<button type="button" data-bind="click: clear">Clear</button>
+
+<select class="form-control" 
+        data-bind="options: worlds, optionsCaption: '- Select - ', optionsText: 'name', optionsValue: 'id'">
+</select>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Population</th>
+    </tr>
+    <tbody data-bind="foreach: worlds">
+        <tr>
+            <td><span data-bind="text: id"></span></td>
+            <td><span data-bind="text: name"></span></td>
+            <td><span data-bind="text: population"></span></td>
+        </tr>
+    </tbody>
+</table>
+
+@section scripts
+{
+    <script type="text/javascript">
+        var viewModel = {
+            worlds: ko.observableArray(),
+            clear: function(){
+                this.worlds.removeAll();
+            }
+        };
+
+        $(document).ready(function () {
+            ko.applyBindings(viewModel);
+
+            var url = "https://api.guildwars2.com/v2/worlds?ids=all";
+            $.getJSON(url, function (data) {
+                for(var i in data) {
+                    viewModel.worlds.push({ id: data[i].id, name: data[i].name, population: data[i].population })
+                }
+            });
+        });
+    </script>
+}
