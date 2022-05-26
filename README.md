@@ -5,10 +5,13 @@ Notes, code, etc. from HTDNUG meetings
 
 - 2016
     - July: Knockout JS
+    - May: BI/OLAP
     - Feb: Concurrency
     - Jan: MVC Intro and Tips
 - 2015
     - Oct: Auditing EF
+    - Sept: QA
+    - July: SQL Server Data Tools (VS2015)
     - June: Elmah and Simple Injector
     - Apr: Comparing ASP.NET MVC and ASP.NET Forms
 - 2014
@@ -17,7 +20,9 @@ Notes, code, etc. from HTDNUG meetings
     - Feb: Refactoring Legacy Code
 - 2013
     - Oct: Fizz Buzz and Picture List
-    - Mar: Strategy and Specification Patterns
+    - Mar: SOLID Part 3 (DIP), Strategy Pattern, and Specification Pattern
+    - Feb: SOLID Part 2 (OCP, LSP, ISP)
+    - Jan: Code Smells and SOLID Part 1 (SRP)
 - 2012
     - Sept: Intro to LINQ
     - June: Intro to Unit Testing
