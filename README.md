@@ -1,16 +1,18 @@
 # HTDNUG Meetings
+
 Notes, code, etc. from HTDNUG meetings
 
 ## Meeting List
 
 - 2016
     - July: Knockout JS
-    - May: BI/OLAP
+    - May: Beginning BI with Microsoft Tools
+    - Apr: The Binary Language of Music by Brian Rigsby
     - Feb: Concurrency
     - Jan: MVC Intro and Tips
 - 2015
     - Oct: Auditing EF
-    - Sept: QA
+    - Sept: QA by Lyle Hutson
     - July: SQL Server Data Tools (VS2015)
     - June: Elmah and Simple Injector
     - Apr: Comparing ASP.NET MVC and ASP.NET Forms
